@@ -39,7 +39,7 @@ LuaTablePrint.printtbl = function(luatbl, printbools)
         table.insert(parts, tostring(key))
       end
     elseif type(value) == 'table' then
-      local nested = '{' .. LuaTableRead.printtbl(value, printbools) .. '}'
+      local nested = '{' .. LuaTablePrint.printtbl(value, printbools) .. '}'
 	  insert_key_value_pair(parts, key, nested)
     else -- string, number, etc.
 	  insert_key_value_pair(parts, key, value)
